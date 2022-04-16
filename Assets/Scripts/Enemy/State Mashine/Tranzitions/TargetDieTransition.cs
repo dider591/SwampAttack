@@ -8,7 +8,7 @@ public class TargetDieTransition : Transition
     {
         if (Target == null)
         {
-            NeedTranzit = true;  //флаг нужен переход
+            NeedTranzit = true;  
         }
     }
 }
