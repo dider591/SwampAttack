@@ -10,9 +10,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Player _player;
 
     private Wave _currentVave;
-    private int _currentWaveNumber = 0; // номер текущей волны
-    private float _timerAfterLastSpawn; //время прошедшее с прошлого спавна.
-    private int _spawned; // сколько уже врагов создано
+    private int _currentWaveNumber = 0; 
+    private float _timerAfterLastSpawn; 
+    private int _spawned; 
 
     public event UnityAction AllEnemySpawned;
     public event UnityAction<int, int> EnemyCountChanged;
@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
 
         _timerAfterLastSpawn += Time.deltaTime;
 
-        if (_timerAfterLastSpawn >= _currentVave.Delay)  //спаун Врага
+        if (_timerAfterLastSpawn >= _currentVave.Delay)  
         {
             InstantiateEnemy();
             _spawned++;
@@ -39,17 +39,17 @@ public class Spawner : MonoBehaviour
             EnemyCountChanged?.Invoke(_spawned, _currentVave.Count);
         }
 
-        if (_currentVave.Count <= _spawned)  //проверка закончилась ли волна
+        if (_currentVave.Count <= _spawned)  
         {
             if (_wavs.Count > _currentWaveNumber + 1)
             {
-                AllEnemySpawned.Invoke();   //Сообщаем что все враги созданы для появления кнопки новой волны
+                AllEnemySpawned.Invoke();   
             }
             _currentVave = null;
         }
     }
 
-    public void NextWave() //следующая волна
+    public void NextWave() 
     {
         SetWave(++_currentWaveNumber);
         _spawned = 0;
