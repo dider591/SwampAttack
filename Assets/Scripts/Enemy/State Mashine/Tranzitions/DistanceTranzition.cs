@@ -16,7 +16,7 @@ public class DistanceTranzition : Transition
     {
         if (Vector2.Distance(transform.position, Target.transform.position) < _trasitionRange)
         {
-            NeedTranzit = true; // флаг нужен переход
+            NeedTranzit = true; 
         }
     }
 }
