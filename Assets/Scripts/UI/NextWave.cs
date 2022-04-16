@@ -22,12 +22,12 @@ public class NextWave : MonoBehaviour
 
     public void OnAllEnemySpawned()
     {
-        _newWaveButton.gameObject.SetActive(true);   //включаем кнпку
+        _newWaveButton.gameObject.SetActive(true);   
     }
 
     public void OnWaveButtonClick()
     {
-        _spawner.NextWave(); //вызов новой волны
-        _newWaveButton.gameObject.SetActive(false);  //выключаем кнпку
+        _spawner.NextWave(); 
+        _newWaveButton.gameObject.SetActive(false); 
     }
 }
