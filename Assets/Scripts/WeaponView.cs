@@ -41,7 +41,7 @@ public class WeaponView : MonoBehaviour
     {
         if (_weapon.IsBuyed)
         {
-            _sellButton.interactable = false;  //отключаем кнопку если продали
+            _sellButton.interactable = false;  
         }
     }
 
